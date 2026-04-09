@@ -1,14 +1,19 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function ProjectCard({ project }) {
   const [hovered, setHovered] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <div
+      onClick={() => navigate(`/project/${project.title}`)}
       style={{
         width: "250px",
+        height: "250px",
         cursor: "pointer",
-        position: "relative"
+        position: "relative",
+        overflow: "hidden"
       }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
@@ -16,7 +21,7 @@ export default function ProjectCard({ project }) {
       <img
         src={hovered && project.coverGif ? project.coverGif : project.coverImg ? project.coverImg : "/p123/ProjectsMedia/placeholder.jpg"}
         alt={project.title}
-        style={{ width: "100%", display: "block" }}
+        style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
       />
 
       {hovered && (
