@@ -6,28 +6,38 @@ export default function ProjectPage() {
 
   const project = projects.find((p) => p.title === title);
 
-  if (!project) return <h1>Project not found</h1>;
+  if (!project) {
+    return (
+      <div className="px-6 py-20 text-center">
+        <h1 className="text-2xl font-semibold">Project not found</h1>
+      </div>
+    );
+  }
 
   return (
-    <div>
-      <h1>{project.title}</h1>
-      <p>{project.description}</p>
+    <div className="px-6 py-12 max-w-6xl mx-auto">
+      {/* Header */}
+      <h1 className="text-3xl font-bold mb-3">{project.title}</h1>
+      <p className="text-zinc-600 mb-10 leading-relaxed">
+        {project.description}
+      </p>
 
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "20px", marginTop: "20px" }}>        
-        {project.images && project.images.map((image, i) => (
+      {/* Media Grid */}
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {project.images?.map((image, i) => (
           <img
             key={i}
             src={image}
-            alt={`${project.title} ${image}`}
-            style={{ width: "100%", borderRadius: "8px" }}
+            alt={`${project.title} ${i}`}
+            className="w-full aspect-square object-cover rounded-lg shadow-md"
           />
         ))}
 
-        {project.videos && project.videos.map((video, i) => (
+        {project.videos?.map((video, i) => (
           <video
             key={i}
             controls
-            style={{ width: "100%", borderRadius: "8px" }}
+            className="w-full aspect-square object-cover rounded-lg shadow-md"
           >
             <source src={video} />
           </video>

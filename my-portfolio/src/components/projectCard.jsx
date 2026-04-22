@@ -5,40 +5,36 @@ export default function ProjectCard({ project }) {
   const [hovered, setHovered] = useState(false);
   const navigate = useNavigate();
 
+  const imageSrc =
+    hovered && project.coverGif
+      ? project.coverGif
+      : project.coverImg
+      ? project.coverImg
+      : "/p123/ProjectsMedia/placeholder.jpg";
+
   return (
     <div
       onClick={() => navigate(`/project/${project.title}`)}
-      style={{
-        width: "250px",
-        height: "250px",
-        cursor: "pointer",
-        position: "relative",
-        overflow: "hidden"
-      }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
+      className="relative w-full aspect-square cursor-pointer overflow-hidden rounded-xl shadow-md transition-transform duration-300 hover:scale-[1.02]"
     >
       <img
-        src={hovered && project.coverGif ? project.coverGif : project.coverImg ? project.coverImg : "/p123/ProjectsMedia/placeholder.jpg"}
+        src={imageSrc}
         alt={project.title}
-        style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+        className="h-full w-full object-cover transition-all duration-300"
       />
 
-      {hovered && (
-        <div
-          style={{
-            position: "absolute",
-            bottom: 0,
-            width: "100%",
-            background: "rgba(0,0,0,0.6)",
-            color: "white",
-            textAlign: "center",
-            padding: "5px"
-          }}
-        >
+      {/* Hover overlay */}
+      <div
+        className={`absolute inset-0 flex items-end justify-center bg-black/50 transition-opacity duration-300 ${
+          hovered ? "opacity-100" : "opacity-0"
+        }`}
+      >
+        <div className="w-full p-3 text-center text-white text-sm font-medium">
           {project.title}
         </div>
-      )}
+      </div>
     </div>
   );
 }

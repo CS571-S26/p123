@@ -1,22 +1,18 @@
-import ProjectCard from "./ProjectCard";
+import ProjectCard from "./projectCard";
 
 function Section({ title, id, projects }) {
   return (
-    <div style={{ padding: "20px" }}>
-      <h2 id={id}>{title}</h2>
+    <section id={id} className="py-10 px-5">
+      <h2 className="text-2xl font-semibold mb-6 tracking-tight">
+        {title}
+      </h2>
 
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-          gap: "20px"
-        }}
-      >
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {projects.map((project) => (
-          <ProjectCard key={project.id} project={project} />
+          <ProjectCard key={project.title} project={project} />
         ))}
       </div>
-    </div>
+    </section>
   );
 }
 

@@ -1,39 +1,31 @@
 import projects from "../data/projects";
-import ProjectCard from "../components/ProjectCard";
-import Section from "../components/Section";
+import Section from "../components/section.jsx";
 
 export default function Home() {
-  // Filter projects by category
-  const modelingProjects = projects.filter(
-    (p) => p.category === "modeling"
-  );
-
-  const designProjects = projects.filter(
-    (p) => p.category === "design"
-  );
-
-  const gameProjects = projects.filter(
-    (p) => p.category === "game"
-  );
+  const groupedProjects = {
+    modeling: projects.filter((p) => p.category === "modeling"),
+    design: projects.filter((p) => p.category === "design"),
+    game: projects.filter((p) => p.category === "game"),
+  };
 
   return (
-    <div style={{ padding: "20px" }}>
+    <div className="px-5 py-10">
       <Section
         title="3D Modeling"
         id="modeling"
-        projects={modelingProjects}
+        projects={groupedProjects.modeling}
       />
 
       <Section
         title="Design"
         id="design"
-        projects={designProjects}
+        projects={groupedProjects.design}
       />
 
       <Section
         title="Game Dev"
-        id="games"
-        projects={gameProjects}
+        id="game"
+        projects={groupedProjects.game}
       />
     </div>
   );

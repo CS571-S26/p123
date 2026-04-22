@@ -1,6 +1,6 @@
 import { HashRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/navbar";
-import Home from "./pages/Home";
+import Home from "./pages/home";
 import ProjectPage from "./pages/projectPage.jsx";
 
 export default function App() {
