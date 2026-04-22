@@ -2,7 +2,7 @@ import ProjectCard from "./projectCard";
 
 function Section({ title, id, projects }) {
   return (
-    <section id={id} className="py-10 px-5">
+    <section id={id} className="py-10 px-5 scroll-mt-12">
       <h2 className="text-2xl font-semibold mb-6 tracking-tight">
         {title}
       </h2>

@@ -1,5 +1,6 @@
 import projects from "../data/projects";
 import Section from "../components/section.jsx";
+import Hero from "../components/hero.jsx";
 
 export default function Home() {
   const groupedProjects = {
@@ -9,6 +10,8 @@ export default function Home() {
   };
 
   return (
+    <>
+    <Hero />
     <div className="px-5 py-10">
       <Section
         title="3D Modeling"
@@ -28,5 +31,6 @@ export default function Home() {
         projects={groupedProjects.game}
       />
     </div>
+    </>
   );
 }
