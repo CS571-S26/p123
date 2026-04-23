@@ -2,11 +2,6 @@ import { Link } from "react-router-dom";
 import { colors } from "../design-system/tokens/colors";
 
 export default function Navbar() {
-  const scrollTo = (id) => {
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
-  };
-
   const linkClass = `
     text-sm font-medium transition
     ${colors.accent.textHover}
@@ -32,19 +27,19 @@ export default function Navbar() {
         My Portfolio
       </Link>
 
-      {/* Nav buttons */}
+      {/* Nav links */}
       <div className="flex gap-6">
-        <button onClick={() => scrollTo("modeling")} className={linkClass}>
+        <Link to="/projects/modeling" className={linkClass}>
           3D Modeling
-        </button>
+        </Link>
 
-        <button onClick={() => scrollTo("design")} className={linkClass}>
-          Design
-        </button>
+        <Link to="/projects/design" className={linkClass}>
+          Graphic Design
+        </Link>
 
-        <button onClick={() => scrollTo("game")} className={linkClass}>
-          Game Dev
-        </button>
+        <Link to="/projects/game" className={linkClass}>
+          Game Development
+        </Link>
       </div>
     </nav>
   );

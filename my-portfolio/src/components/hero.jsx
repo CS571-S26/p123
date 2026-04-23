@@ -34,7 +34,7 @@ export default function Hero() {
 
         <div className="mt-8 flex gap-4">
           <button
-            onClick={() => scrollTo("modeling")}
+            onClick={() => scrollTo("my-work")}
             className={`
               px-5 py-2 rounded-full
               ${colors.accent.primary} text-black font-medium
@@ -43,6 +43,19 @@ export default function Hero() {
           >
             View Work
           </button>
+
+          <button
+            onClick={() => scrollTo("about")}
+            className={`
+                px-5 py-2 rounded-full
+                border border-neutral-600
+                ${colors.text.primary}
+                hover:border-cyan-400 ${colors.accent.textHover}
+                transition
+            `}
+            >
+            About Me
+            </button>   
         </div>
       </div>
     </section>
