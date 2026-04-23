@@ -52,6 +52,15 @@ const projects = [
     description: "A 3D model of liminal office space, modeled and textured in Maya.",
     coverImg: "/p123/ProjectsMedia/OfficeSpace/OfficeSpace.jpg",
     coverGif: null
+  },
+  {
+    title: "Art 463: Information Graphics",
+    category: "design",
+    images: ["/p123/ProjectsMedia/InfoGraphics/Top Netflix Movies.png", "/p123/ProjectsMedia/InfoGraphics/How To Tie Shoe Laces.png", "/p123/ProjectsMedia/InfoGraphics/Coca-Cola Logo History.png", "/p123/ProjectsMedia/InfoGraphics/Fallout Family Tree.png"],
+    videos: null,
+    description: "A collection of information graphics created for an art class. Tools used include Adobe Illustrator and RStudio.",
+    coverImg: "/p123/ProjectsMedia/InfoGraphics/Top Netflix Movies.png",
+    coverGif: null
   }
 ];
 
