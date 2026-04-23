@@ -1,3 +1,5 @@
+import { colors } from "../design-system/tokens/colors";
+
 export default function Hero() {
   const scrollTo = (id) => {
     const el = document.getElementById(id);
@@ -17,23 +19,27 @@ export default function Hero() {
         <source src="/p123/HeroVids/CelPingPong.mp4" type="video/mp4" />
       </video>
 
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/60" />
+      {/* Overlay */}
+      <div className={`absolute inset-0 ${colors.bg.overlay}`} />
 
       {/* Content */}
-      <div className="relative z-10 flex h-full flex-col items-center justify-center text-center text-white px-6">
-        <h1 className="text-4xl sm:text-6xl font-bold tracking-tight">
+      <div className="relative z-10 flex h-full flex-col items-center justify-center text-center px-6">
+        <h1 className={`text-4xl sm:text-6xl font-bold tracking-tight ${colors.text.primary}`}>
           Hi, I’m Caden
         </h1>
 
-        <p className="mt-4 text-lg sm:text-xl text-white/80 max-w-2xl">
+        <p className={`mt-4 max-w-xl text-lg ${colors.text.secondary}`}>
           I build interactive 3D worlds, games, and digital experiences.
         </p>
 
         <div className="mt-8 flex gap-4">
           <button
             onClick={() => scrollTo("modeling")}
-            className="px-5 py-2 rounded-full bg-white text-black font-medium hover:bg-white/90 transition"
+            className={`
+              px-5 py-2 rounded-full
+              ${colors.accent.primary} text-black font-medium
+              hover:opacity-90 transition
+            `}
           >
             View Work
           </button>

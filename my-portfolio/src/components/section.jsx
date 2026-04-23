@@ -1,19 +1,20 @@
 import ProjectCard from "./projectCard";
+import { colors } from "../design-system/tokens/colors";
 
-function Section({ title, id, projects }) {
+export default function Section({ title, id, projects }) {
   return (
-    <section id={id} className="py-10 px-5 scroll-mt-12">
-      <h2 className="text-2xl font-semibold mb-6 tracking-tight">
+    <section id={id} className="py-10 space-y-6">
+      {/* Title */}
+      <h2 className={`text-2xl font-semibold ${colors.text.primary}`}>
         {title}
       </h2>
 
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        {projects.map((project) => (
-          <ProjectCard key={project.title} project={project} />
+      {/* Grid */}
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {projects.map((p) => (
+          <ProjectCard key={p.title} project={p} />
         ))}
       </div>
     </section>
   );
 }
-
-export default Section;

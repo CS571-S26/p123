@@ -1,39 +1,44 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { colors } from "../design-system/tokens/colors";
 
 export default function ProjectCard({ project }) {
   const [hovered, setHovered] = useState(false);
   const navigate = useNavigate();
 
-  const imageSrc =
+  const image =
     hovered && project.coverGif
       ? project.coverGif
-      : project.coverImg
-      ? project.coverImg
-      : "/p123/ProjectsMedia/placeholder.jpg";
+      : project.coverImg || "/p123/ProjectsMedia/placeholder.jpg";
 
   return (
     <div
       onClick={() => navigate(`/project/${project.title}`)}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="relative w-full aspect-square cursor-pointer overflow-hidden rounded-xl shadow-md transition-transform duration-300 hover:scale-[1.02]"
+      className={`
+        relative aspect-square overflow-hidden rounded-xl
+        ${colors.bg.surface} shadow-md cursor-pointer
+        hover:scale-[1.02] transition
+      `}
     >
+      {/* Image */}
       <img
-        src={imageSrc}
-        alt={project.title}
-        className="h-full w-full object-cover transition-all duration-300"
+        src={image}
+        className="w-full h-full object-cover"
       />
 
       {/* Hover overlay */}
       <div
-        className={`absolute inset-0 flex items-end justify-center bg-black/50 transition-opacity duration-300 ${
-          hovered ? "opacity-100" : "opacity-0"
-        }`}
+        className={`
+          absolute inset-0 flex items-center justify-center
+          ${colors.bg.overlay} ${colors.text.primary}
+          font-semibold
+          transition-opacity duration-300
+          ${hovered ? "opacity-100" : "opacity-0"}
+        `}
       >
-        <div className="w-full p-3 text-center text-white text-sm font-medium">
-          {project.title}
-        </div>
+        {project.title}
       </div>
     </div>
   );
