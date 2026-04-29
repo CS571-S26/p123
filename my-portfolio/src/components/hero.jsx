@@ -39,6 +39,7 @@ export default function Hero() {
               px-5 py-2 rounded-full
               ${colors.accent.primary} text-black font-medium
               hover:opacity-90 transition
+              cursor-pointer
             `}
           >
             View Work
@@ -52,6 +53,7 @@ export default function Hero() {
                 ${colors.text.primary}
                 hover:border-cyan-400 ${colors.accent.textHover}
                 transition
+                cursor-pointer
             `}
             >
             About Me

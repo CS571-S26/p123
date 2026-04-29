@@ -31,14 +31,31 @@ export default function ProjectCard({ project }) {
       {/* Hover overlay */}
       <div
         className={`
-          absolute inset-0 flex items-center justify-center
+          absolute inset-0 flex flex-col items-center justify-center
           ${colors.bg.overlay} ${colors.text.primary}
-          font-semibold
           transition-opacity duration-300
           ${hovered ? "opacity-100" : "opacity-0"}
+          text-center px-4
         `}
       >
-        {project.title}
+        {/* Title */}
+        <div className="text-lg font-semibold">
+          {project.title}
+        </div>
+
+        {/* Skills */}
+        {project.skills && (
+          <div className="mt-2 flex flex-wrap justify-center gap-2">
+            {project.skills.map((skill) => (
+              <span
+                key={skill}
+                className="text-xs px-2 py-1 rounded-full border border-white/20 bg-black/30"
+              >
+                {skill}
+              </span>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

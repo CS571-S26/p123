@@ -24,7 +24,6 @@ export default function ProjectFilters({
     setCategories([...new Set(allCategories)]);
 
     const incomingCategory = location.state?.category;
-    console.log("Incoming category:", incomingCategory);
     if (incomingCategory) {
         setSelectedCategories([incomingCategory]);
         navigate(location.pathname, { replace: true, state: null });
@@ -96,6 +95,7 @@ export default function ProjectFilters({
                     px-3 py-1 rounded-md text-sm border transition
                     ${colors.border.default} ${colors.text.primary}
                     hover:border-cyan-400
+                    cursor-pointer
                     `}
                 >
                     {open ? "Hide Filters" : "Show Filters"}

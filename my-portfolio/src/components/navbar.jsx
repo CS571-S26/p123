@@ -1,12 +1,24 @@
 import { Link } from "react-router-dom";
 import { colors } from "../design-system/tokens/colors";
+import ItchIcon from "../Icons/itch-io.svg?react";
+import GitHubIcon from "../Icons/GitHub_Invertocat_White.svg?react";
+import LinkedInIcon from "../Icons/linkedin.svg?react";
 
 export default function Navbar() {
   const externalLinkClass = `
-    text-sm font-medium transition
-    ${colors.text.secondary}
-    hover:text-white
+    ${colors.text.primary}
+    ${colors.accent.textHover}
+    transition
+    cursor-pointer
   `;
+
+  const scrollToContact = () => {
+    const el = document.getElementById("contact");
+
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <nav
@@ -17,16 +29,49 @@ export default function Navbar() {
         ${colors.text.primary}
       `}
     >
-      {/* Brand */}
-      <Link
-        to="/"
-        className={`
-          text-lg font-bold tracking-tight transition
-          ${colors.accent.textHover}
-        `}
-      >
-        Caden Miller
-      </Link>
+      {/* Left side cluster */}
+      <div className="flex items-center gap-6">
+
+        {/* Brand */}
+        <Link
+          to="/"
+          className={`
+            text-lg font-bold tracking-tight transition
+            ${colors.accent.textHover}
+          `}
+        >
+          Caden Miller
+        </Link>
+
+        {/* Divider (optional but recommended) */}
+        <div className={`h-5 w-px ${colors.border.subtle}`} />
+
+        {/* Projects */}
+        <Link
+          to="/portfolio"
+          className={`
+            text-md font-medium tracking-wide transition
+            ${colors.text.secondary}
+            ${colors.accent.textHover}
+          `}
+        >
+          Projects
+        </Link>
+
+        {/* Contact */}
+        <button
+          onClick={scrollToContact}
+          className={`
+            text-md font-medium tracking-wide transition
+            ${colors.text.secondary}
+            ${colors.accent.textHover}
+            cursor-pointer
+          `}
+        >
+          Contact
+        </button>
+
+      </div>
 
       {/* External Links */}
       <div className="flex items-center gap-6">
@@ -37,11 +82,7 @@ export default function Navbar() {
           rel="noreferrer"
           className={externalLinkClass}
         >
-          <img
-            src="/p123/Icons/GitHub_Invertocat_White.svg"
-            alt="GitHub"
-            className="w-7 h-7"
-          />
+          <GitHubIcon className="w-7 h-7" />
         </a>
 
         <a
@@ -50,11 +91,7 @@ export default function Navbar() {
           rel="noreferrer"
           className={externalLinkClass}
         >
-          <img
-            src="/p123/Icons/InBug-White.png"
-            alt="LinkedIn"
-            className="w-7 h-7"
-          />
+          <LinkedInIcon className="w-7 h-7" />
         </a>
 
         <a
@@ -63,11 +100,7 @@ export default function Navbar() {
           rel="noreferrer"
           className={externalLinkClass}
         >
-          <img
-            src="/p123/Icons/itch-io.svg"
-            alt="Itch"
-            className="w-7 h-7"
-          />
+          <ItchIcon className="w-7 h-7" />
         </a>
 
       </div>

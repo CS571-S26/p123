@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
+import svgr from "vite-plugin-svgr";
 
 console.log("ROOT:", process.cwd())
 console.log("WATCHING SRC:", "./src exists?")
@@ -9,7 +10,8 @@ console.log("WATCHING SRC:", "./src exists?")
 export default defineConfig({
   plugins: [
     react(),
-    tailwindcss()
+    tailwindcss(),
+    svgr()
   ],
   base: '/p123/',
   server: {
