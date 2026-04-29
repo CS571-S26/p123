@@ -25,9 +25,36 @@ export default function ProjectPage() {
           {project.title}
         </h1>
 
+        {/* Description */}
         <p className="text-neutral-300 mb-10 leading-relaxed max-w-3xl">
           {project.description}
         </p>
+
+        {/* Link */}
+        {project.link && (
+          <div className="mb-10">
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noreferrer"
+              className={`
+                inline-block
+                px-5 py-2 rounded-full border
+
+                ${colors.border.default}
+                ${colors.text.primary}
+
+                hover:border-emerald-400
+                hover:text-emerald-400
+
+                transition
+                cursor-pointer
+              `}
+            >
+              See More ↗
+            </a>
+          </div>
+        )}
 
         {/* Media Grid */}
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
