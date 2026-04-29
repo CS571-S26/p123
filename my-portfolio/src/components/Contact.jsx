@@ -28,7 +28,7 @@ export default function Contact() {
   return (
     <section id = "contact"
       className={`
-        px-6 py-20 mt-20 border-t
+        px-6 py-20 border-t
         ${colors.bg.base}
         ${colors.border.subtle}
         ${colors.text.primary}

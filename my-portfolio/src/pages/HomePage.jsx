@@ -12,7 +12,7 @@ export default function Home() {
       <Hero />
       <About />
       {/* Category Section */}
-      <div className="px-6 py-16 max-w-6xl mx-auto">
+      <div className={`px-6 py-16 max-w-6xl mx-auto ${colors.bg.base}`}>
         <h2 id="my-work" className={`text-3xl font-bold mb-8 text-center ${colors.text.primary}`}>
           Explore My Work
         </h2>

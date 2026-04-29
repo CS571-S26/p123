@@ -2,7 +2,7 @@ import { colors } from "../design-system/tokens/colors";
 
 export default function About() {
   return (
-    <section id = "about" className="px-6 py-16 max-w-6xl mx-auto">
+    <section id = "about" className={`px-6 py-16 max-w-6xl mx-auto ${colors.bg.base}`}>
       <div className="grid gap-10 items-center md:grid-cols-2">
         
         {/* Image */}
