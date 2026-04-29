@@ -2,9 +2,10 @@ import { Link } from "react-router-dom";
 import { colors } from "../design-system/tokens/colors";
 
 export default function Navbar() {
-  const linkClass = `
+  const externalLinkClass = `
     text-sm font-medium transition
-    ${colors.accent.textHover}
+    ${colors.text.secondary}
+    hover:text-white
   `;
 
   return (
@@ -27,19 +28,48 @@ export default function Navbar() {
         Caden Miller
       </Link>
 
-      {/* Nav links */}
-      <div className="flex gap-6">
-        <Link to="/projects/modeling" className={linkClass}>
-          3D Modeling
-        </Link>
+      {/* External Links */}
+      <div className="flex items-center gap-6">
+        
+        <a
+          href="https://github.com/cadermill"
+          target="_blank"
+          rel="noreferrer"
+          className={externalLinkClass}
+        >
+          <img
+            src="/p123/Icons/GitHub_Invertocat_White.svg"
+            alt="GitHub"
+            className="w-7 h-7"
+          />
+        </a>
 
-        <Link to="/projects/design" className={linkClass}>
-          Graphic Design
-        </Link>
+        <a
+          href="https://linkedin.com/in/caden-miller-736251295"
+          target="_blank"
+          rel="noreferrer"
+          className={externalLinkClass}
+        >
+          <img
+            src="/p123/Icons/InBug-White.png"
+            alt="LinkedIn"
+            className="w-7 h-7"
+          />
+        </a>
 
-        <Link to="/projects/game" className={linkClass}>
-          Game Development
-        </Link>
+        <a
+          href="https://itch.io/profile/cadermill"
+          target="_blank"
+          rel="noreferrer"
+          className={externalLinkClass}
+        >
+          <img
+            src="/p123/Icons/itch-io.svg"
+            alt="Itch"
+            className="w-7 h-7"
+          />
+        </a>
+
       </div>
     </nav>
   );
