@@ -3,12 +3,16 @@
 import { useNavigate } from "react-router-dom";
 import { colors } from "../design-system/tokens/colors";
 
-export default function CategoryCard({ title, image, route }) {
+export default function CategoryCard({ title, image, category }) {
   const navigate = useNavigate();
 
   return (
     <div
-      onClick={() => navigate(route)}
+      onClick={() =>
+        navigate("/portfolio", {
+          state: { category: category }
+        })
+      }
       className={`
         relative aspect-square overflow-hidden rounded-xl
         ${colors.bg.surface} shadow-md cursor-pointer

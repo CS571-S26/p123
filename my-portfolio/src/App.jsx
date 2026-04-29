@@ -12,7 +12,7 @@ export default function App() {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/projects/:category" element={<PortfolioPage />} />
+        <Route path="/portfolio" element={<PortfolioPage />} />
         <Route path="/project/:title" element={<ProjectPage />} />
       </Routes>
     </HashRouter>

@@ -1,6 +1,6 @@
 import projects from "../data/projects.js";
 import Hero from "../components/Hero.jsx";
-import CategoryCard from "../components/categoryCard.jsx";
+import CategoryCard from "../components/CategoryCard.jsx";
 import About from "../components/About.jsx";
 import { colors } from "../design-system/tokens/colors.js";
 
@@ -21,19 +21,19 @@ export default function Home() {
           <CategoryCard
             title="3D Modeling"
             image="/p123/ProjectsMedia/Wodger/front.jpg"
-            route="/projects/modeling"
+            category="3D Modeling"
           />
 
           <CategoryCard
             title="Graphic Design"
             image="/p123/ProjectsMedia/Broadsheet/Scranton-Times-Broadsheet.jpg"
-            route="/projects/design"
+            category="Graphic Design"
           />
 
           <CategoryCard
             title="Game Development"
             image="/p123/ProjectsMedia/placeholder.jpg"
-            route="/projects/game"
+            category="Game Development"
           />
 
         </div>

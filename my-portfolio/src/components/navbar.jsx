@@ -24,7 +24,7 @@ export default function Navbar() {
           ${colors.accent.textHover}
         `}
       >
-        My Portfolio
+        Caden Miller
       </Link>
 
       {/* Nav links */}
