@@ -82,7 +82,7 @@ export default function ProjectFilters({
         selectedCategories.length > 0;
 
   return (
-    <div className="sticky top-0 z-20 bg-neutral-950/90 backdrop-blur border-b border-neutral-800">
+    <div className={`sticky top-0 z-20 ${colors.bg.base} backdrop-blur border-b ${colors.border.subtle}`}>
         <div className="max-w-6xl mx-auto px-6 py-3 space-y-2">
             <div className="flex items-center justify-between">
                 <div>
@@ -93,8 +93,7 @@ export default function ProjectFilters({
                     onClick={() => setOpen(prev => !prev)}
                     className={`
                     px-3 py-1 rounded-md text-sm border transition
-                    ${colors.border.default} ${colors.text.primary}
-                    hover:border-cyan-400
+                    ${colors.border.default} ${colors.text.primary} ${colors.accent.borderHover}
                     cursor-pointer
                     `}
                 >
@@ -116,7 +115,7 @@ export default function ProjectFilters({
                 ))}
 
                 {!hasActiveFilters && (
-                    <span className="text-neutral-500 text-sm">
+                    <span className={`${colors.text.muted} text-sm`}>
                     No filters selected
                     </span>
                 )}

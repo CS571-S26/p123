@@ -52,7 +52,7 @@ export default function Contact() {
             value={form.name}
             onChange={handleChange}
             required
-            className="w-full px-4 py-3 rounded-lg bg-neutral-900 border border-neutral-800"
+            className={`w-full px-4 py-3 rounded-lg ${colors.bg.surface} border ${colors.border.subtle}`}
           />
 
           <textarea
@@ -62,7 +62,7 @@ export default function Contact() {
             value={form.comment}
             onChange={handleChange}
             required
-            className="w-full px-4 py-3 rounded-lg bg-neutral-900 border border-neutral-800 resize-none"
+            className={`w-full px-4 py-3 rounded-lg ${colors.bg.surface} border ${colors.border.subtle} resize-none`}
           />
 
           <button
@@ -70,8 +70,12 @@ export default function Contact() {
             className={`
               px-6 py-3 rounded-lg font-medium transition
               ${colors.accent.primary}
-              ${colors.accent.primaryHover}
+              border border-transparent
+              hover:bg-transparent
+              ${colors.accent.textHover}
+              ${colors.accent.borderHover}
               text-black
+              cursor-pointer
             `}
           >
             Send Message

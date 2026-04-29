@@ -29,16 +29,24 @@ export default function Hero() {
         </h1>
 
         <p className={`mt-4 max-w-xl text-lg ${colors.text.secondary}`}>
-          I build interactive 3D worlds, games, and digital experiences.
+          I create digital experiences and 3D work that blend technical development with creative design.
         </p>
 
         <div className="mt-8 flex gap-4">
           <button
             onClick={() => scrollTo("my-work")}
             className={`
-              px-5 py-2 rounded-full
-              ${colors.accent.primary} text-black font-medium
-              hover:opacity-90 transition
+               px-5 py-2 rounded-full
+              ${colors.accent.primary}
+              text-black font-medium
+
+              border border-transparent
+
+              hover:bg-transparent
+              hover:text-emerald-400
+              hover:border-emerald-400
+
+              transition
               cursor-pointer
             `}
           >
@@ -49,9 +57,13 @@ export default function Hero() {
             onClick={() => scrollTo("about")}
             className={`
                 px-5 py-2 rounded-full
-                border border-neutral-600
+
+                border ${colors.border.default}
                 ${colors.text.primary}
-                hover:border-cyan-400 ${colors.accent.textHover}
+
+                ${colors.accent.borderHover}
+                ${colors.accent.textHover}
+
                 transition
                 cursor-pointer
             `}

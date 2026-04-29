@@ -19,6 +19,8 @@ export default function ProjectCard({ project }) {
       className={`
         relative aspect-square overflow-hidden rounded-xl
         ${colors.bg.surface} shadow-md cursor-pointer
+        border border-transparent
+        ${colors.accent.borderHover}
         hover:scale-[1.02] transition
       `}
     >

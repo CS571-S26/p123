@@ -15,8 +15,14 @@ export default function CategoryCard({ title, image, category }) {
       }
       className={`
         relative aspect-square overflow-hidden rounded-xl
-        ${colors.bg.surface} shadow-md cursor-pointer
-        hover:scale-[1.02] transition
+        ${colors.bg.surface}
+        shadow-md cursor-pointer
+
+        border border-transparent
+        transition-all duration-200
+
+        ${colors.accent.borderHover}
+        hover:scale-[1.02]
       `}
     >
       {/* Image */}

@@ -1,35 +1,35 @@
 export const colors = {
   bg: {
-    base: "bg-neutral-950",
-    surface: "bg-neutral-900",
-    overlay: "bg-black/60",
+    base: "bg-zinc-950",
+    surface: "bg-zinc-900",
+    overlay: "bg-black/50",
   },
 
   text: {
-    primary: "text-white",
-    secondary: "text-neutral-300",
-    muted: "text-neutral-500",
+    primary: "text-zinc-100",
+    secondary: "text-zinc-300",
+    muted: "text-zinc-400",
   },
 
   accent: {
-    primary: "bg-cyan-500",
-    primaryHover: "hover:bg-cyan-400",
-    textHover: "hover:text-cyan-400",
-    border: "border-cyan-500",
-    borderHover: "hover:border-cyan-400",
+    primary: "bg-teal-500",
+    primaryHover: "hover:bg-teal-400",
+    textHover: "hover:text-teal-400",
+    border: "border-teal-500",
+    borderHover: "hover:border-teal-400",
   },
 
   danger: {
-    primary: "bg-orange-500",
-    primaryHover: "hover:bg-orange-400",
-    text: "text-orange-400",
-    border: "border-orange-500",
-    hoverBg: "hover:bg-orange-500",
+    primary: "bg-amber-500",
+    primaryHover: "hover:bg-amber-400",
+    text: "text-amber-400",
+    border: "border-amber-500",
+    hoverBg: "hover:bg-amber-500",
     hoverText: "hover:text-black",
   },
 
   border: {
-    default: "border-neutral-700",
-    subtle: "border-neutral-800",
+    default: "border-zinc-700",
+    subtle: "border-zinc-800",
   }
 };

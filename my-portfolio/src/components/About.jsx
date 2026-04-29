@@ -26,16 +26,17 @@ export default function About() {
           </h2>
 
           <p className={`text-lg leading-relaxed ${colors.text.secondary}`}>
-            I’m a developer focused on creating interactive 3D experiences,
-            games, and digital designs. I enjoy building systems that feel
-            responsive, immersive, and intuitive.
+            I approach design with a focus on balancing aesthetics and function,
+            aiming for clarity, structure, and intentional visual communication.
+            I’m drawn to clean layouts, simple visual systems, and work that conveys
+            ideas effectively without unnecessary complexity.
           </p>
 
           <p className={`text-lg leading-relaxed ${colors.text.secondary}`}>
-            My work combines technical problem solving with creative design,
-            using tools like Unity, Blender, and modern web technologies.
-            I’m especially interested in projects that blend gameplay,
-            visual storytelling, and user interaction.
+            My process is exploratory and iterative, often refining ideas through
+            experimentation. While my work spans 3D, games, and digital projects,
+            I carry a consistent design mindset rooted in simplicity, purpose, and
+            a “less is more” approach to visual problem-solving.
           </p>
         </div>
 
