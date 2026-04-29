@@ -28,7 +28,7 @@ export default function Contact() {
   return (
     <section id = "contact"
       className={`
-        px-6 py-20 border-t
+        px-6 py-10 border-t
         ${colors.bg.base}
         ${colors.border.subtle}
         ${colors.text.primary}
@@ -74,6 +74,7 @@ export default function Contact() {
               hover:bg-transparent
               ${colors.accent.textHover}
               ${colors.accent.borderHover}
+              hover:scale-105
               text-black
               cursor-pointer
             `}

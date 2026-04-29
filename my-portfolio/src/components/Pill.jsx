@@ -5,7 +5,7 @@ export default function Pill({ label, active, onClick }) {
     <button
       onClick={onClick}
       className={`
-        px-4 py-2 rounded-full border text-sm transition
+        px-4 py-2 rounded-full border text-sm transition cursor-pointer
 
         ${
           active

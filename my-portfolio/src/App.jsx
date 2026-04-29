@@ -5,10 +5,12 @@ import PortfolioPage from "./pages/PortfolioPage.jsx";
 import ProjectPage from "./pages/ProjectPage.jsx";
 import ScrollToTop from "./components/ScrollToTop.jsx";
 import Contact from "./components/Contact.jsx"
+import ScrollToTopButton from "./components/ScrollToTopButton.jsx";
 
 export default function App() {
   return (
     <HashRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+      <ScrollToTopButton />
       <Navbar />
       <ScrollToTop />
       <Routes>

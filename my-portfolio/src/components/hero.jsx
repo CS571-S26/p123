@@ -43,8 +43,9 @@ export default function Hero() {
               border border-transparent
 
               hover:bg-transparent
-              hover:text-emerald-400
-              hover:border-emerald-400
+              ${colors.accent.textHover}
+              ${colors.accent.borderHover}
+              hover:scale-105
 
               transition
               cursor-pointer
@@ -63,6 +64,7 @@ export default function Hero() {
 
                 ${colors.accent.borderHover}
                 ${colors.accent.textHover}
+                hover:scale-105
 
                 transition
                 cursor-pointer

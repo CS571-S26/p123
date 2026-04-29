@@ -40,6 +40,7 @@ export default function ProjectPage() {
               <img
                 src={image}
                 alt={`${project.title} ${i}`}
+                loading="lazy"
                 className="w-full aspect-square object-cover"
               />
             </div>

@@ -70,6 +70,7 @@ export default function ProjectFilters({
                     className={`
                     px-3 py-1 rounded-md text-sm border transition
                     ${colors.border.default} ${colors.text.primary} ${colors.accent.borderHover}
+                    hover:scale-105
                     cursor-pointer
                     `}
                 >
@@ -161,12 +162,13 @@ export default function ProjectFilters({
 
                 ${
                     isEmpty
-                    ? `${colors.border.default} ${colors.text.muted} opacity-50 cursor-not-allowed`
+                    ? `${colors.border.default} ${colors.text.muted} opacity-50`
                     : `
                         ${colors.danger.border}
                         ${colors.danger.text}
                         hover:bg-orange-500
                         hover:text-black
+                        cursor-pointer
                         `
                 }
                 `}

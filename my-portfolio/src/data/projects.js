@@ -6,6 +6,7 @@ const projects = [
     images: null,
     videos: ["/p123/ProjectsMedia/CelShader/CelShowcase.mp4", "/p123/ProjectsMedia/CelShader/TechnicalShowcase.mp4"],
     description: "A custom cel shader written in HLSL in Unity's ShaderLab for the Universal Render Pipeline.",
+    link: "https://github.com/cadermill/Shaders",
     coverImg: null,
     coverGif: null
   },

@@ -27,6 +27,7 @@ export default function ProjectCard({ project }) {
       {/* Image */}
       <img
         src={image}
+        loading="lazy"
         className="w-full h-full object-cover"
       />
 
