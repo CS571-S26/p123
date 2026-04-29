@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import projects from "../data/projects";
 import { colors } from "../design-system/tokens/colors";
 import { useLocation, useNavigate } from "react-router-dom";
+import Pill from "./Pill";
 
 export default function ProjectFilters({
   selectedSkills,
@@ -48,31 +49,6 @@ export default function ProjectFilters({
     }
   };
 
-  const Pill = ({ label, type }) => {
-    const active =
-      type === "category"
-        ? selectedCategories.includes(label)
-        : selectedSkills.includes(label);
-
-    return (
-      <button
-        onClick={() => toggle(label, type)}
-        className={`
-          px-4 py-2 rounded-full border text-sm transition
-
-          ${
-            active
-              ? `${colors.accent.primary} text-black ${colors.accent.border}`
-              : `${colors.border.default} ${colors.text.primary} ${colors.accent.borderHover}`
-          }
-        `}
-      >
-        {active ? "✓ " : ""}
-        {label}
-      </button>
-    );
-  };
-
   const isEmpty =
     selectedSkills.length === 0 &&
     selectedCategories.length === 0;
@@ -107,11 +83,19 @@ export default function ProjectFilters({
                 {/* Left: summary */}
                 <div className="flex flex-wrap gap-2 text-sm">
                 {selectedCategories.map(item => (
-                    <Pill key={item} label={item} type="category" />
+                    <Pill 
+                        key={item} label={item}
+                        active={selectedCategories.includes(item)}
+                        onClick={() => toggle(item, "category")} 
+                    />
                 ))}
 
                 {selectedSkills.map(item => (
-                    <Pill key={item} label={item} type="skill" />
+                    <Pill 
+                        key={item} label={item}
+                        active={selectedSkills.includes(item)}
+                        onClick={() => toggle(item, "skill")}
+                    />
                 ))}
 
                 {!hasActiveFilters && (
@@ -137,7 +121,11 @@ export default function ProjectFilters({
 
             <div className="flex flex-wrap gap-3">
                 {categories.map(item => (
-                <Pill key={item} label={item} type="category" />
+                <Pill 
+                    key={item} label={item}
+                    active={selectedCategories.includes(item)}
+                    onClick={() => toggle(item, "category")} 
+                />
                 ))}
             </div>
             </section>
@@ -150,7 +138,11 @@ export default function ProjectFilters({
 
             <div className="flex flex-wrap gap-3">
                 {skills.map(item => (
-                <Pill key={item} label={item} type="skill" />
+                <Pill 
+                    key={item} label={item}
+                    active={selectedSkills.includes(item)}
+                    onClick={() => toggle(item, "skill")}
+                />
                 ))}
             </div>
             </section>
