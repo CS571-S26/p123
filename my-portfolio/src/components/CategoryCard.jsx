@@ -28,7 +28,7 @@ export default function CategoryCard({ title, image, category }) {
       {/* Image */}
       <img
         src={image}
-        alt={title}
+        alt=""
         className="w-full h-full object-cover"
       />
 

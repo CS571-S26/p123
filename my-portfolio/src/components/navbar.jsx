@@ -80,6 +80,7 @@ export default function Navbar() {
           href="https://github.com/cadermill"
           target="_blank"
           rel="noreferrer"
+          aria-label="GitHub link"
           className={externalLinkClass}
         >
           <GitHubIcon className="w-7 h-7" />
@@ -89,6 +90,7 @@ export default function Navbar() {
           href="https://linkedin.com/in/caden-miller-736251295"
           target="_blank"
           rel="noreferrer"
+          aria-label="LinkedIn link"
           className={externalLinkClass}
         >
           <LinkedInIcon className="w-7 h-7" />
@@ -98,6 +100,7 @@ export default function Navbar() {
           href="https://itch.io/profile/cadermill"
           target="_blank"
           rel="noreferrer"
+          aria-label="Itch.io link"
           className={externalLinkClass}
         >
           <ItchIcon className="w-7 h-7" />

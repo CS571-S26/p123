@@ -45,25 +45,47 @@ export default function Contact() {
 
         <form onSubmit={handleSubmit} className="space-y-5">
 
-          <input
-            type="text"
-            name="name"
-            placeholder="Your Name"
-            value={form.name}
-            onChange={handleChange}
-            required
-            className={`w-full px-4 py-3 rounded-lg ${colors.bg.surface} border ${colors.border.subtle}`}
-          />
+          <div className="space-y-2">
+            <label
+              htmlFor="name"
+              className={`text-sm font-medium ${colors.text.secondary}`}
+            >
+              Name
+            </label>
 
-          <textarea
-            name="comment"
-            placeholder="Your Message"
-            rows="5"
-            value={form.comment}
-            onChange={handleChange}
-            required
-            className={`w-full px-4 py-3 rounded-lg ${colors.bg.surface} border ${colors.border.subtle} resize-none`}
-          />
+            <input
+              id="name"
+              type="text"
+              name="name"
+              value={form.name}
+              onChange={handleChange}
+              className={`
+                w-full px-4 py-3 rounded-lg
+                ${colors.bg.surface}
+                border ${colors.border.default}
+                ${colors.text.primary}
+              `}
+            />
+          </div>
+
+
+          <div className="space-y-2">
+            <label
+              htmlFor="message"
+              className={`text-sm font-medium ${colors.text.secondary}`}
+            >
+              Message
+            </label>
+
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              value={form.message}
+              onChange={handleChange}
+              className={`w-full px-4 py-3 rounded-lg ${colors.bg.surface} border ${colors.border.subtle} resize-none`}
+            />
+          </div>
 
           <button
             type="submit"
